@@ -1,0 +1,142 @@
+/*
+	@modCssClasses
+	@customTag: radio-box
+	@cssMod: mod_small
+	@cssMod: mod_foldable
+	--theme-transitionDuration 			0.15s
+	--theme-highlightedBackgroundColor 	rgba(0, 0, 0, 0.1)
+	--theme-mainFont 					rgba(0, 0, 0, 1)
+	--theme-importantDetail 			rgba(255, 0, 255, 1)
+	--theme-errorBackgroundColor 		rgba(255, 0, 0, 0.2)
+*/
+
+
+
+
+radio-box {
+	display: block;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+	background-color: var(--theme-highlightedBackgroundColor, rgba(0, 0, 0, 0.1));
+	transition-property: background-color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+	overflow: hidden;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 4rem;
+	margin-left: 0;
+	width: 100%;
+}
+
+radio-box.error {
+	background-color: var(--theme-errorBackgroundColor, rgba(255, 0, 0, 0.2));
+}
+
+radio-box .option {
+	display: flex;
+	padding-top: 1rem;
+	padding-right: 1rem;
+	padding-bottom: 1rem;
+	padding-left: 1rem;
+	transition-property: background-color, border-bottom-color, opacity;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: var(--theme-highlightedBackgroundColor, rgba(0, 0, 0, 0.1));
+	align-items: center;
+	cursor: pointer;
+	opacity: 0.6;
+}
+
+radio-box.mod_small .option {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+}
+
+radio-box .option:last-child {
+	border-bottom-width: 0;
+}
+
+radio-box .option.selected {
+	opacity: 1;
+}
+
+radio-box .option:hover, radio-box .option.selected {
+	background-color: var(--theme-highlightedBackgroundColor, rgba(0, 0, 0, 0.1));
+	opacity: 1;
+}
+
+radio-box .option .bullet {
+	box-shadow: 0 0 0 2px var(--theme-mainFont, rgba(0, 0, 0, 1)) inset;
+	min-width: 1.25rem;
+	min-height: 1.25rem;
+	max-width: 1.25rem;
+	margin-right: 1rem;
+	border-radius: 500px;
+	border-top-left-radius: 500px;
+	border-top-right-radius: 500px;
+	border-bottom-right-radius: 500px;
+	border-bottom-left-radius: 500px;
+	transition-property: box-shadow, background-color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+}
+
+radio-box .option.selected .bullet {
+	background-color: var(--theme-importantDetail, rgba(255, 0, 255, 1));
+	box-shadow: 0 0 0 2px var(--theme-mainFont, rgba(0, 0, 0, 1)) inset, 0 0 0 4px white inset;
+}
+
+radio-box .option .text {
+	flex: 1;
+}
+
+radio-box .option .text .title {
+	font-weight: 600;
+	color: var(--theme-mainFont, rgba(0, 0, 0, 1));
+	transition-property: color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+}
+
+radio-box.mod_small .option .text .title {
+	font-weight: 400;
+	font-size: 0.9rem;
+}
+
+radio-box .option .text .subtitle {
+	display: block;
+	font-size: 0.8rem;
+	color: var(--theme-mainFont, rgba(0, 0, 0, 1));
+	opacity: 0.6;
+	transition-property: color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+}
+
+radio-box.mod_foldable .option .text .subtitle {
+	max-height: 0;
+	overflow: hidden;
+}
+
+radio-box.mod_foldable .option.selected .text .subtitle {
+	max-height: max-content;
+}
+
+radio-box .option .text .subtitle b {
+	opacity: 0.8;
+	transition-property: color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+	color: var(--theme-mainFont);
+}
+
+radio-box .option .icon {
+	width: 2rem;
+	min-width: 2rem;
+	max-width: 2rem;
+	height: 2rem;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+	overflow: hidden;
+}
