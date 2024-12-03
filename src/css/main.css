@@ -3,6 +3,8 @@
 	@customTag: radio-box
 	@cssMod: mod_small
 	@cssMod: mod_foldable
+	@cssMod: mod_smallIcon
+	@cssMod: mod_discreet
 	--theme-transitionDuration 			0.15s
 	--theme-highlightedBackgroundColor 	rgba(0, 0, 0, 0.1)
 	--theme-mainFont 					rgba(0, 0, 0, 1)
@@ -30,6 +32,13 @@ radio-box {
 	width: 100%;
 }
 
+radio-box.mod_discreet {
+	background-color: var(--theme-background, rgba(17, 17, 17, 1));
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
 radio-box.error {
 	background-color: var(--theme-errorBackgroundColor, rgba(255, 0, 0, 0.2));
 }
@@ -50,6 +59,21 @@ radio-box .option {
 	opacity: 0.6;
 }
 
+radio-box.mod_discreet .option {
+	padding-top: 0.5rem;
+	padding-right: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0.5rem;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--theme-secondaryFont, rgba(255, 255, 255, 0.6));
+	opacity: 0.8;
+}
+
 radio-box.mod_small .option {
 	padding-top: 0.75rem;
 	padding-bottom: 0.75rem;
@@ -59,12 +83,24 @@ radio-box .option:last-child {
 	border-bottom-width: 0;
 }
 
+radio-box.mod_discreet .option:last-child {
+	border-bottom-width: 1px;
+}
+
 radio-box .option.selected {
+	opacity: 1;
+}
+
+radio-box.mod_discreet .option.selected {
 	opacity: 1;
 }
 
 radio-box .option:hover, radio-box .option.selected {
 	background-color: var(--theme-highlightedBackgroundColor, rgba(0, 0, 0, 0.1));
+	opacity: 1;
+}
+
+radio-box.mod_discreet .option:hover, radio-box.mod_discreet .option.selected {
 	opacity: 1;
 }
 
@@ -90,6 +126,7 @@ radio-box .option.selected .bullet {
 
 radio-box .option .text {
 	flex: 1;
+	margin-right: 1rem;
 }
 
 radio-box .option .text .title {
@@ -139,4 +176,17 @@ radio-box .option .icon {
 	border-bottom-right-radius: 0.5rem;
 	border-bottom-left-radius: 0.5rem;
 	overflow: hidden;
+}
+
+radio-box.mod_smallIcon .option .icon {
+	width: 1.5rem;
+	min-width: 1.5rem;
+	max-width: 1.5rem;
+	height: 1.5rem;
+}
+
+radio-box .option .icon svg {
+	fill: var(--theme-mainFont, rgba(0, 0, 0, 1));
+	transition-property: fill;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
 }
