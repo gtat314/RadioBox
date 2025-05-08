@@ -16,7 +16,7 @@
 
 
 radio-box {
-	display: block;
+	display: flex;
 	border-top-left-radius: 0.5rem;
 	border-top-right-radius: 0.5rem;
 	border-bottom-right-radius: 0.5rem;
@@ -30,6 +30,7 @@ radio-box {
 	margin-bottom: 4rem;
 	margin-left: 0;
 	width: 100%;
+	flex-direction: column;
 }
 
 radio-box.mod_discreet {
