@@ -53,6 +53,13 @@ function RadioBox( schema ) {
      */
     this._onChangeCallback = null;
 
+    /**
+     * @property
+     * @private
+     * @type {CallableFunction}
+     */
+    this._handleClickOptionElem = _evt_click_optionElem.bind( this );
+
 
 
 
@@ -165,7 +172,7 @@ RadioBox.prototype.addOption = function( schema ) {
 
     }
 
-    optionElem.addEventListener( 'click', this._evt_click_optionElem.bind( this ) );
+    optionElem.addEventListener( 'click', this._handleClickOptionElem );
 
     this._parentElem.appendChild( fragment );
 
@@ -323,7 +330,7 @@ RadioBox.prototype._createFromHTML = function() {
 
     for ( var i = 0 ; i < optionsNum ; i++ ) {
 
-        optionElems[ i ].addEventListener( 'click', this._evt_click_optionElem.bind( this ) );
+        optionElems[ i ].addEventListener( 'click', this._handleClickOptionElem );
 
     }
 
@@ -392,7 +399,7 @@ RadioBox.prototype._createFromSchema = function( schema ) {
 
         }
 
-        optionElem.addEventListener( 'click', this._evt_click_optionElem.bind( this ) );
+        optionElem.addEventListener( 'click', this._handleClickOptionElem );
 
     }
 
