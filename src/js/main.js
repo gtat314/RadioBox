@@ -58,7 +58,7 @@ function RadioBox( schema ) {
      * @private
      * @type {CallableFunction}
      */
-    this._handleClickOptionElem = _evt_click_optionElem.bind( this );
+    this._handleClickOptionElem = this._evt_click_optionElem.bind( this );
 
 
 
