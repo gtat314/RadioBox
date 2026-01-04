@@ -401,6 +401,13 @@ RadioBox.prototype._createFromSchema = function( schema ) {
 
         optionElem.addEventListener( 'click', this._handleClickOptionElem );
 
+        if ( i < schema.options.length - 1 ) {
+
+            var hrElem = document.createElement( 'HR' );
+            fragment.appendChild( hrElem );
+
+        }
+
     }
 
     this._parentElem.appendChild( fragment );

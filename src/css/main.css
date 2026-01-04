@@ -5,6 +5,7 @@
 	@cssMod: mod_foldable
 	@cssMod: mod_smallIcon
 	@cssMod: mod_discreet
+	@cssMod: mod_thick
 	--theme-transitionDuration 			0.15s
 	--theme-highlightedBackgroundColor 	rgba(0, 0, 0, 0.1)
 	--theme-mainFont 					rgba(0, 0, 0, 1)
@@ -33,6 +34,15 @@ radio-box {
 	flex-direction: column;
 }
 
+radio-box.mod_thick {
+	background-color: var(--theme-background, rgb(255, 255, 255));
+	gap: 1rem;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
 radio-box.mod_discreet {
 	background-color: var(--theme-background, rgba(17, 17, 17, 1));
 	display: flex;
@@ -58,6 +68,14 @@ radio-box .option {
 	align-items: center;
 	cursor: pointer;
 	opacity: 0.6;
+}
+
+radio-box.mod_thick .option {
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+	border-bottom-width: 0;
 }
 
 radio-box.mod_discreet .option {
@@ -189,5 +207,25 @@ radio-box.mod_smallIcon .option .icon {
 radio-box .option .icon svg {
 	fill: var(--theme-mainFont, rgba(0, 0, 0, 1));
 	transition-property: fill;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+}
+
+radio-box hr {
+	display: none;
+}
+
+radio-box.mod_thick hr {
+	display: block;
+	border-top-style: none;
+	border-top-width: 0px;
+	border-top-color: var(--theme-inputBackgroundColor, rgba(0, 0, 0, 0));
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: var(--theme-highlightedBackgroundColor, rgba(0, 0, 0, 0.1));
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	transition-property: border-bottom-color;
 	transition-duration: var(--theme-transitionDuration, 0.15s);
 }
