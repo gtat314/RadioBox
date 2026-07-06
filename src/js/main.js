@@ -1,28 +1,5 @@
 /**
  * 
- * @employSchema
- * @eventListeners
- * @sensibleDefaults
- * @svgSrc
- * @documentation
- * @documentationApi
- * @iconUniformNames
- * @objectifyEventListeners
- * @minimizeProperties
- * @parentElementSelector
- * @distinctEventListeners
- * @propertiesElemUnderscore
- * @propertify
- * @propertyNamingConventions
- * @methodNamingConventions
- * @htmlReadyMethods
- */
-
-
-
-
-/**
- * 
  * @param {Object}                   schema
  * @param {HTMLElement|CSSRule}      schema.parent
  * @param {Boolean}                 [schema.htmlReady]
